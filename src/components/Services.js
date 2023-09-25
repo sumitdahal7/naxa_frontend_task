@@ -1,29 +1,22 @@
-import { useDispatch, useSelector } from "react-redux";
-import { getServicesAction } from "../redux/services/slice";
-import { useEffect } from "react";
+import React from "react";
 
-const Services = () => {
-  const { data, isLoading } = useSelector((state) => state.services.services);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getServicesAction());
-  }, [dispatch]);
-
+const services = () => {
   return (
-    <div>
-      {isLoading ? (
-        <span>Loadinggg...</span>
-      ) : data ? (
-        <div>
-          <h1>Data xa</h1>
-        </div>
-      ) : (
-        <span>Data xaina</span>
-      )}
+    <div className="flex flex-col justify-center m-32">
+      <p className="text-[#FFAB00] font-bold my-2">Services</p>
+      <p className="text-6xl w-7/12 my-2 tracking-wide">
+        At <span className="text-[#124AF4]">NAXA</span>, we work on ideas;{" "}
+        <span className="text-[#124AF4]">ideas</span> that can provide{" "}
+        <span>simple solutions</span> to
+        <span className="text-[#124AF4]"> complex problems.</span>
+      </p>
+      <p className="text-xl w-7/12 my-2 text-[#333132] font-bold">
+        We work as a team to generate, explore, build and validate ideas. We
+        also contextualize innovations around the world to find the best fitting
+        solutions to local problems.
+      </p>
     </div>
   );
 };
 
-export default Services;
+export default services;
